@@ -3,47 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Knogen ska ge pengar 💪</title>
+  <title>Knogen ska ge pengar 🌈</title>
   <meta name="description" content="Steg för steg till ersättning från olycksfallsförsäkringen.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="floaties" id="floaties" aria-hidden="true"></div>
   <canvas id="confetti" aria-hidden="true"></canvas>
 
-  <header class="hero">
-    <div class="hero-emoji" aria-hidden="true">👊✨</div>
-    <h1>Hej <span id="name"></span>!<br><span class="glow">Knogen ska ge PENGAR.</span></h1>
-    <p class="lead">Du har haft ont i över ett år. Nu får försäkringen betala. Klicka dig igenom ett steg i taget, så är du i mål innan du vet ordet av. 🏆</p>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-emoji" aria-hidden="true">🌈👊🦄</div>
+      <p class="hello">Hej hej <span id="name"></span>! 👋</p>
+      <h1 class="rainbow" id="title">Knogen ska ge PENGAR!</h1>
 
-    <div class="progress-wrap">
-      <div class="progress-label">
-        <span id="level">Nivå 1: Nybörjarnäve</span>
-        <span id="percent">0 %</span>
+      <div class="knogis">
+        <div class="knogis-face" aria-hidden="true">🧸</div>
+        <p class="bubble" id="bubble"></p>
       </div>
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar">
-        <div class="progress-fill" id="progress-fill"></div>
+
+      <p class="lead">Stackars knogen har varit ledsen i över ett helt år 🥺 Nu ska försäkringen bjuda på pengar! Klicka i en ruta i taget, så får du ett <strong>klistermärke</strong> för varje. Visst låter det kul? 🍭</p>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="level">Nivå 1: Liten modig mus 🐭</span>
+          <span id="percent">0 %</span>
+        </div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar">
+          <div class="progress-fill" id="progress-fill"><span class="rider" aria-hidden="true">🦄</span></div>
+        </div>
       </div>
-    </div>
 
-    <button class="btn btn-big" id="tiny-step">🎯 Ge mig BARA nästa lilla grej</button>
-    <p class="hint">Orkar du inte idag? Tryck på knappen och gör en enda sak. Det räknas! 💖</p>
-  </header>
+      <section class="album" aria-labelledby="album-title">
+        <h2 id="album-title">⭐ Ditt klistermärkesalbum ⭐</h2>
+        <div class="stickers" id="stickers"></div>
+        <p class="album-count" id="album-count"></p>
+      </section>
 
-  <main id="steps"></main>
+      <button class="btn btn-big" id="tiny-step">🍬 Visa mig BARA nästa pyttelilla grej</button>
+      <p class="hint">Trött idag? Det är helt okej, gumman! Tryck på knappen och gör en enda liten sak. Det räknas jättemycket! 💖</p>
+    </header>
 
-  <section class="finale" id="finale" hidden>
-    <div class="trophy" aria-hidden="true">🏆</div>
-    <h2>DU GJORDE DET!!!</h2>
-    <p>Varenda steg är klart. Du har gjort något som många skjuter upp i åratal. Nu ska du bara vänta in pengarna och vara SJUKT stolt över dig själv. 🥳🎉👑</p>
-    <button class="btn" id="party">Mer konfetti! 🎊</button>
-  </section>
+    <main id="steps"></main>
 
-  <footer>
-    <p><strong>Bra att veta:</strong> det här är en peppande checklista, inte juridisk rådgivning. Villkoren skiljer sig mellan bolag, så läs dina villkor och fråga bolaget om något känns oklart. Gratis och opartisk hjälp finns hos <a href="https://www.konsumenternas.se" target="_blank" rel="noopener">Konsumenternas försäkringsbyrå</a>.</p>
-    <p>Dina ibockade steg sparas bara i den här webbläsaren.</p>
-    <button class="link-btn" id="reset">Börja om från noll</button>
-  </footer>
+    <section class="finale" id="finale" hidden>
+      <div class="trophy" aria-hidden="true">🏆🦄👑</div>
+      <h2 class="rainbow" id="finale-title">DU GJORDE DET!!!</h2>
+      <p>Du har samlat ALLA klistermärken! Du är världens allra duktigaste och modigaste. Nu ska du bara vänta på pengarna och vara SUPERSTOLT över dig själv. 🥳🎉🍰🎈</p>
+      <button class="btn" id="party">Mer konfetti, tack! 🎊</button>
+    </section>
+
+    <footer>
+      <p><strong>Bra att veta:</strong> det här är en peppande checklista, inte juridisk rådgivning. Villkoren skiljer sig mellan bolag, så läs dina villkor och fråga bolaget om något känns oklart. Gratis och opartisk hjälp finns hos <a href="https://www.konsumenternas.se" target="_blank" rel="noopener">Konsumenternas försäkringsbyrå</a>.</p>
+      <p>Dina bockar och klistermärken sparas bara i den här webbläsaren.</p>
+      <button class="link-btn" id="reset">Börja om från noll</button>
+    </footer>
+  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
