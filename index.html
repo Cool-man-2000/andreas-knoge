@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knogen ska ge pengar 💪</title>
+  <meta name="description" content="Steg för steg till ersättning från olycksfallsförsäkringen.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <header class="hero">
+    <div class="hero-emoji" aria-hidden="true">👊✨</div>
+    <h1>Hej <span id="name"></span>!<br><span class="glow">Knogen ska ge PENGAR.</span></h1>
+    <p class="lead">Du har haft ont i över ett år. Nu får försäkringen betala. Klicka dig igenom ett steg i taget, så är du i mål innan du vet ordet av. 🏆</p>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="level">Nivå 1: Nybörjarnäve</span>
+        <span id="percent">0 %</span>
+      </div>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <button class="btn btn-big" id="tiny-step">🎯 Ge mig BARA nästa lilla grej</button>
+    <p class="hint">Orkar du inte idag? Tryck på knappen och gör en enda sak. Det räknas! 💖</p>
+  </header>
+
+  <main id="steps"></main>
+
+  <section class="finale" id="finale" hidden>
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <h2>DU GJORDE DET!!!</h2>
+    <p>Varenda steg är klart. Du har gjort något som många skjuter upp i åratal. Nu ska du bara vänta in pengarna och vara SJUKT stolt över dig själv. 🥳🎉👑</p>
+    <button class="btn" id="party">Mer konfetti! 🎊</button>
+  </section>
+
+  <footer>
+    <p><strong>Bra att veta:</strong> det här är en peppande checklista, inte juridisk rådgivning. Villkoren skiljer sig mellan bolag, så läs dina villkor och fråga bolaget om något känns oklart. Gratis och opartisk hjälp finns hos <a href="https://www.konsumenternas.se" target="_blank" rel="noopener">Konsumenternas försäkringsbyrå</a>.</p>
+    <p>Dina ibockade steg sparas bara i den här webbläsaren.</p>
+    <button class="link-btn" id="reset">Börja om från noll</button>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
